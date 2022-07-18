@@ -2,9 +2,10 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Striped Progress bar </h4>
-                <div class="progress-bar bg-info progress-bar-striped active" style="height:10px;"
-                [style.width]="getPercentage" role="progressbar"> </div>
+                <div class="progress-bar bg-primary progress-bar-striped active m-2" style="height:7px;"
+                [style.width]="getProgress1" role="progressbar"> </div>
+                <div class="progress-bar bg-info progress-bar-striped active m-2" style="height:7px;"
+                [style.width]="getProgress2" role="progressbar"> </div>
             </div>
         </div>
     </div>
@@ -13,22 +14,22 @@
     <div class="col-6">
         <div class="card">
             <div class="card-body">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button (click)="changeValue(-5)" class="btn btn-primary" type="button"><i class="fa fa-minus"></i></button>
-                    </span>
-                    <input min="0" max="100" [(ngModel)]="progres" value="getPercentage" type="number" class="form-control" placeholder="Product name">
-                    <span class="input-group-btn">
-                        <button (click)="changeValue(5)" class="btn btn-primary" type="button"><i class="fa fa-plus"></i></button>
-                    </span>
-                </div>
+                <app-incrementer 
+                    (changeProgress)="progress1 = $event" 
+                    [progres]="progress1"
+                    [btnClass]="'btn-primary'">
+                </app-incrementer>
             </div>
         </div>
     </div>
     <div class="col-6">
         <div class="card">
             <div class="card-body">
-                2
+                <app-incrementer 
+                    (changeProgress)="progress2 = $event" 
+                    [progres]="progress2"
+                    [btnClass]="'btn-info'">
+                </app-incrementer>
             </div>
         </div>
     </div>
