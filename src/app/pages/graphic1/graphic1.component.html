@@ -1,1 +1,26 @@
-<p>graphic1 works!</p>
+<div class="row">
+    <div class="col-6">
+        <app-doughnut 
+        [title]="title" 
+        [doughnutChartLabels]="doughnutChartLabels2"
+        [doughnutChartData]="doughnutChartData2"
+        ></app-doughnut>
+    </div>
+    <div class="col-6">
+        <app-doughnut 
+        [title]="title2" 
+        [doughnutChartLabels]="doughnutChartLabels"
+        [doughnutChartData]="doughnutChartData"
+        ></app-doughnut>
+    </div>
+    <div class="col-6">
+        <app-doughnut
+        [doughnutChartData]="doughnutChartData"></app-doughnut>
+    </div>
+    <div class="col-6">
+        <app-doughnut
+        [doughnutChartData]="doughnutChartData2"></app-doughnut>
+    </div>
+</div>
+
+   

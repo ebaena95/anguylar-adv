@@ -35,4 +35,17 @@ export class IncrementerComponent implements OnInit {
     this.changeProgress.emit(this.progres);
   }
 
+  onChange(value :number){
+
+    if(value >= 100){
+      this.progres = 100;
+    }else if(value <= 0){
+      this.progres = 0;
+    }else{
+      this.progres = value;
+      this.changeProgress.emit(value);
+    }
+    
+  }
+
 }

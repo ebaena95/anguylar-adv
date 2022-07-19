@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-graphic1',
@@ -6,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class Graphic1Component implements OnInit {
+export class Graphic1Component  {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  protected title = 'Sellings';
+  protected title2 = 'Other';
+  protected doughnutChartLabels: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
+  protected doughnutChartLabels2: string[] = [ 'Download Sales', 'In-Store Sales', 'Mail-Order Sales' ];
+  protected doughnutChartData: [number[]] =  [
+    [ 350, 450, 100 ]
+];
+protected doughnutChartData2: [number[]] =  [
+  [ 200, 600, 200 ]
+];
 
 }
