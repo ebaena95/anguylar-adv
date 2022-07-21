@@ -11,6 +11,8 @@ import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../routes/app-routing.module';
 import { AccoundSettingsComponent } from './accound-settings/accound-settings.component';
+import { PromisesComponent } from './promises/promises.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 
@@ -21,7 +23,9 @@ import { AccoundSettingsComponent } from './accound-settings/accound-settings.co
     ProgressComponent,
     Graphic1Component,
     PagesComponent,
-    AccoundSettingsComponent
+    AccoundSettingsComponent,
+    PromisesComponent,
+    RxjsComponent
 
   ],
   imports: [
