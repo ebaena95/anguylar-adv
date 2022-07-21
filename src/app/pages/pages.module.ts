@@ -10,6 +10,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../routes/app-routing.module';
+import { AccoundSettingsComponent } from './accound-settings/accound-settings.component';
 
 
 
@@ -19,7 +20,8 @@ import { AppRoutingModule } from '../routes/app-routing.module';
     DashboardComponent,
     ProgressComponent,
     Graphic1Component,
-    PagesComponent
+    PagesComponent,
+    AccoundSettingsComponent
 
   ],
   imports: [
@@ -35,7 +37,8 @@ import { AppRoutingModule } from '../routes/app-routing.module';
     DashboardComponent,
     ProgressComponent,
     Graphic1Component,
-    PagesComponent
+    PagesComponent,
+    AccoundSettingsComponent
 
   ]
 })
