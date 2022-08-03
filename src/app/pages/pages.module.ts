@@ -42,7 +42,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     ProgressComponent,
     Graphic1Component,
     PagesComponent,
-    AccoundSettingsComponent
+    AccoundSettingsComponent,
+    PromisesComponent,
+    RxjsComponent
 
   ]
 })
