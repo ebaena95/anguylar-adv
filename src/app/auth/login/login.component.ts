@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import{UserService}from '../../services/user.service';
+import swal from 'sweetalert2'; 
 
 @Component({
   selector: 'app-login',
@@ -8,15 +11,36 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private Router:Router) { }
+  public formSubmitted = false;
+  public loginForm = this.fb.group({
+    email:[localStorage.getItem('email') || '', [Validators.required, Validators.email]],
+    password:['', Validators.required],
+    remember:[false]
+  });
 
-  ngOnInit(): void {
-  }
+  constructor(private fb: FormBuilder, private UserService:UserService,private Router:Router) { }
 
+  ngOnInit(): void {}
   login(){
+    this.formSubmitted = true;
+    this.UserService.login(this.loginForm.value).subscribe(resp=>{
+      if(this.loginForm.get('remember').value === true){
+        localStorage.setItem('email', this.loginForm.get('email').value);
+      }else{
+        localStorage.removeItem('email');
+      }   
+    },
+    (err)=>{swal.fire('Error', err.error.msg, 'error')})
 
-    this.Router.navigateByUrl('/')
+    // this.Router.navigateByUrl('/')
 
+  }
+  notValidField(field:string):boolean{
+    if(this.loginForm.get(field).invalid && this.formSubmitted){
+      return true;
+    }else {
+      return false;
+    }
   }
 
 
