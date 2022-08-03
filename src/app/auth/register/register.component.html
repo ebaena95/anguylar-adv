@@ -15,7 +15,7 @@
                                 placeholder="Name"
                                 formControlName="name">
                     </div>
-                    <p class="text-danger" *ngIf="notValidField('name')">Name is required</p>
+                    <p class="text-danger" *ngIf="notValidField('name')">*Name is required</p>
                 </div>
                 <div class="form-group ">
                     <div class="col-xs-12">
@@ -24,7 +24,7 @@
                                 placeholder="Email"
                                 formControlName="email">
                     </div>
-                    <p class="text-danger" *ngIf="notValidField('email')">Email is required and must be valid </p>
+                    <p class="text-danger" *ngIf="notValidField('email')">*Email is required and must be valid </p>
                 </div>
                 <div class="form-group ">
                     <div class="col-xs-12">
@@ -33,7 +33,7 @@
                                 placeholder="Password"
                                 formControlName="password">
                     </div>
-                    <p class="text-danger" *ngIf="notValidField('password')">Password is required</p>
+                    <p class="text-danger" *ngIf="notValidField('password')">*Password is required</p>
                 </div>
                 <div class="form-group">
                     <div class="col-xs-12">
@@ -42,7 +42,7 @@
                                 placeholder="Confirm Password"
                                 formControlName="password2">
                     </div>
-                    <p class="text-danger" *ngIf="notValidField('password2')">Confirm password is required</p>
+                    <p class="text-danger" *ngIf="!verifyPasswords()">*Passwords must be the same</p>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-12">
@@ -51,7 +51,7 @@
                             type="checkbox"
                             formControlName="terms">
                             <label for="checkbox-signup"> I agree to all <a href="#">Terms</a></label>
-                            <p class="text-danger" *ngIf="registerForm.get('terms').value === false && formSubmitted">You must accept terms</p>
+                            <p class="text-danger" *ngIf="registerForm.get('terms').value === false && formSubmitted">*You must accept terms</p>
                         </div>
                     </div>
                 </div>
